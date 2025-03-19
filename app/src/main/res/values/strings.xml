@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">MaterialDesignExample</string>
+
+    <string name="contenido_lista_1">Entrada 1</string>
+    <string name="contenido_lista_2">Entrada 2</string>
+    <string name="contenido_lista_3">Entrada 3</string>
+    <string name="contenido_lista_4">Entrada 4</string>
+    <string name="contenido_lista_5">Entrada 5</string>
+
+    <string name="add_to_list_button">Agregar elemento</string>
+
+    <string name="infinte_list_entry_message">Mensaje %1$d</string>
+
+    <string name="second_activity_launcher_button" >Lista infinita</string>
 </resources>
