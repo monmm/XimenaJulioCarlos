@@ -1,24 +1,39 @@
 package mx.unam.fciencias.moviles.materialdesign;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
+    import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends MainMenuActivity {
+
+    private Button launchSecondActivityButton;
+    private String shareViewTransitionName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        launchSecondActivityButton  = findViewById(R.id.launch_second_activity);
+        launchSecondActivityButton.setOnClickListener(this::launchSecondActivity);
+    }
+
+    public void launchSecondActivity(View button){
+        Intent intent = new Intent(this, SecondActivity.class);
+        if (sharedViewTransitionName == null) {
+            sharedViewTransitonName = getString(R.string.shared_button_transitionName);
+        }
+        ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                this, launchSecondActivityButton, shareViewTransitionName
+        );
+
+        resultLauncher.launch(intent, options);
     }
 }

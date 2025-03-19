@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">MaterialDesignExample</string>
+
+
+
+
+
+    <string name="add_to_list_button" >Agregar elemento </string>
+
+    <string name="infinte_list_entry_message">Mensaje %1$d</string>
+
+    <string name="second_activity_launcher_button">Lista infinita</string>
+
+    <string name="menu_about" >Acerca de</string>
+    <string name="menu_close_app" >Cerrar</string>
+
+    <string name="about" >Ejemplo de Material Design y Vistas en Android.</string>
+    <string name="ok" >Ok</string>
+    
+    <string name="shared_button_transitionName" translatable="false"  >botonCompartido</string>
 </resources>
