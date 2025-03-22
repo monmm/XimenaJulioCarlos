@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
-public class InfiniteListAdapter extends RecyclerView.Adapter {
+public class InfiniteListAdapter extends RecyclerView.Adapter<InfiniteListAdapter.ListEntry> {
 
     private final List<String> DATASET;
     private final Resources RESOURCES;
@@ -30,7 +30,7 @@ public class InfiniteListAdapter extends RecyclerView.Adapter {
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ListEntry onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         TextView tv = (TextView) LayoutInflater.from(parent.getContext()).inflate(
                 R.layout.infinite_list_entry, parent, false
         );
@@ -42,6 +42,7 @@ public class InfiniteListAdapter extends RecyclerView.Adapter {
         holder.entryText.setText(DATASET.get(position));
     }
 
+    //Cuantos registros hay en la lista
     @Override
     public int getItemCount() {
         return DATASET.size();
@@ -54,5 +55,6 @@ public class InfiniteListAdapter extends RecyclerView.Adapter {
             super(entryTV);
             entryText = entryTV;
         }
+
     }
 }
