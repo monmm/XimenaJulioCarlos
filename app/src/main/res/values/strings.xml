@@ -12,14 +12,17 @@
     <string name="infinte_list_entry_message">Mensaje %1$d</string>
 
 
-    <string name="second_activity_launcher_button" >Lista infinita</string>
+    <string name="second_activity_launcher_button">Lista infinita</string>
 
-    <string name="menu_about" >Acerca de</string>
-    <string name="menu_close_app" >Cerrar</string>
+    <string name="menu_about">Acerca de</string>
+    <string name="menu_close_app">Cerrar</string>
 
-    <string name="about" >Ejemplo de Material Design y Vistas en Android.</string>
-    <string name="ok" >Ok</string>
-    
-    <string name="shared_button_transitionName" translatable="false"  >botonCompartido</string>
+    <string name="about">Ejemplo de Material Design y Vistas en Android.</string>
+    <string name="ok">Ok</string>
 
+    <string name="shared_button_transitionName" translatable="false">botonCompartido</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="color_detail_description">Descripcion del color</string>
+
+    <string name="red_color_component" >Rojo; %1$f f - %2$d</string>
 </resources>

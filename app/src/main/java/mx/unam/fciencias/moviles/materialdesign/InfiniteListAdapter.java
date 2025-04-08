@@ -2,6 +2,7 @@ package mx.unam.fciencias.moviles.materialdesign;
 
 import android.content.res.Resources;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -16,13 +17,15 @@ public class InfiniteListAdapter extends RecyclerView.Adapter<InfiniteListAdapte
 
     private final List<String> DATASET;
     private final Resources RESOURCES;
+    private final MasterListItemClickHandler CLICK_HANDLER;
 
-    public InfiniteListAdapter(Resources res){
+    public InfiniteListAdapter(Resources res, MasterListItemClickHandler listItemClickHandler) {
         DATASET = new LinkedList<>();
         RESOURCES = res;
+        CLICK_HANDLER = listItemClickHandler;
     }
 
-    public void addItem(){
+    public void addItem() {
         int i = DATASET.size();
         DATASET.add(i, RESOURCES.getString(R.string.infinte_list_entry_message, i + 1));
         notifyItemInserted(i);
@@ -48,13 +51,26 @@ public class InfiniteListAdapter extends RecyclerView.Adapter<InfiniteListAdapte
         return DATASET.size();
     }
 
-    static class ListEntry extends RecyclerView.ViewHolder{
+    class ListEntry extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView entryText;
 
-        ListEntry(TextView entryTV){
+        ListEntry(TextView entryTV) {
             super(entryTV);
             entryText = entryTV;
+            entryTV.setClickable(true);
+            entryTV.setFocusable(true);
+            entryTV.setOnClickListener(this);
         }
 
+        @Override
+        public void onClick(View view) {
+            CLICK_HANDLER.onItemClicked(getBindingAdapterPosition(), entryText.getText().toString(),
+                    DATASET.size());
+        }
+    }
+
+    public interface MasterListItemClickHandler {
+
+        void onItemClicked(int clickItemIndex, String entryText, int masterListSize);
     }
 }
