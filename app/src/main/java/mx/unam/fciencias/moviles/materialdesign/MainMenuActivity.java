@@ -45,7 +45,7 @@ public abstract class MainMenuActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int inId = item.getItemId();
-        int intId;
+        int intId = 0;
         if (intId == R.id.menu_about) {
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder( this);
             alertDialogBuilder.setTitle(R.string.menu_about)

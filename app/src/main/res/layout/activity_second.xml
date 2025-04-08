@@ -11,7 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:id="@+id/add_to_list_button"
-        android:text="@string/add_to_list_button"/>
+        android:text="@string/add_to_list_button"
+        android:transitionName="botonCompartido"/>
 
     <View
         android:layout_width="match_parent"
