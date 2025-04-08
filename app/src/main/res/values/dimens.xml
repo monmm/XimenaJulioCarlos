@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="app_margin" >5dp</dimen>
+    <dimen name="master_list_widht" >250dp</dimen>
+    <dimen name="color_size" >50dp</dimen>
 </resources>

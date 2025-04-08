@@ -15,7 +15,7 @@
         android:gravity="center"
         android:id="@+id/launch_second_activity"
         android:text="@string/second_activity_launcher_button"
-        android:transitionName="@string/shared_button_transitionName"/>
+        android:transitionName="@string/shared_button_transitionName"
 
         <Button
             android:layout_width="wrap_content"
