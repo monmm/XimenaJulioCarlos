@@ -14,6 +14,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 
 public abstract class MainMenuActivity extends AppCompatActivity {
 
@@ -47,7 +48,7 @@ public abstract class MainMenuActivity extends AppCompatActivity {
         int inId = item.getItemId();
         int intId = 0;
         if (intId == R.id.menu_about) {
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder( this);
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
             alertDialogBuilder.setTitle(R.string.menu_about)
                     .setIcon(android.R.drawable.ic_dialog_info)
                     .setMessage(R.string.about)
@@ -60,14 +61,8 @@ public abstract class MainMenuActivity extends AppCompatActivity {
                     .create().show();
             return true;
         }
-        if (intId == R.id.menu_close_app) {
-            setResult(RESULT_EXIT);
-            finish();
-            return true;
-        }
         if (inId == android.R.id.home) {
-            finish();
-            return true;
+            NavUtils.navigateUpFromSameTask(this);
         }
         return super.onOptionsItemSelected(item);
     }

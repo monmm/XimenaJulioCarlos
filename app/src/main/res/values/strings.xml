@@ -24,4 +24,5 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="color_detail_description">Descripcion del color</string>
 
+    <string name="red_color_component" >Rojo; %1$f f - %2$d</string>
 </resources>
