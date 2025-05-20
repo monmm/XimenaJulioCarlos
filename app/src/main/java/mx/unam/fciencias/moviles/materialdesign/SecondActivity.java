@@ -59,7 +59,7 @@ public class SecondActivity extends MainMenuActivity implements InfiniteListAdap
     }
 
     @Override
-    public void onItemClicked(int clickItemIndex, String entryTexr, int masterListSize) {
+    public void onItemClicked(int clickItemIndex, String entryText, int masterListSize) {
         if (isDetailsPaneAvailable) {
             Bundle detailFragmentArgs = new Bundle();
             detailFragmentArgs.putInt(DetailsFragment.INDEX_KEY, clickItemIndex);

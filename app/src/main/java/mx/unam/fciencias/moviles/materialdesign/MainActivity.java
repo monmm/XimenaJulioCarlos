@@ -29,12 +29,13 @@ public class MainActivity extends MainMenuActivity {
 
     public void launchSecondActivity(View button){
         Intent intent = new Intent(this, SecondActivity.class);
-        if(!sharedPreferences.getBoolean(getString(R.string.enable_transitions_preference_key, false)))  {
+        if(!sharedPreferences.getBoolean(getString(
+                R.string.enable_transitions_preference_key),false)){
             startActivity(intent);
             return;
         }
-        if (sharedViewTransitionName == null) {
-            sharedViewTransitonName = getString(R.string.shared_button_transitionName);
+        if (shareViewTransitionName == null) {
+            shareViewTransitionName = getString(R.string.shared_button_transitionName);
         }
         ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
                 this, launchSecondActivityButton, shareViewTransitionName

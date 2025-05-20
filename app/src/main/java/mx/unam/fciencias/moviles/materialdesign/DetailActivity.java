@@ -10,7 +10,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class DetailActivity extends MainMenuActivity {
-
+    public  static final String ENTRY_MESSAGE_KEY= "mx.unam.fciencias.fragmentos.INDEX";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +20,7 @@ public class DetailActivity extends MainMenuActivity {
         String detailFragmentTitle = null;
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setTitle(startIntent.getStringExtra(ENTRY_MESSAGE_KEY);
+            actionBar.setTitle(startIntent.getStringExtra(ENTRY_MESSAGE_KEY));
         } else {
             detailFragmentTitle = startIntent.getStringExtra(ENTRY_MESSAGE_KEY);
         }
@@ -32,7 +32,7 @@ public class DetailActivity extends MainMenuActivity {
         DetailsFragment detailsFragment = new DetailsFragment();
         detailsFragment.setArguments(detailFragmentArgs);
         getSupportFragmentManager().beginTransaction().add(
-                R.id.color_detail_holder; detailsFragment
-        ).comit();
+                R.id.color_detail_holder,detailsFragment
+        ).commit();
     }
 }

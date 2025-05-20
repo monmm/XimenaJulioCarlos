@@ -5,6 +5,6 @@
     android:id="@+id/color_detail_holder"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".DetallActivity">
+    tools:context=".DetailActivity">
 
 </FrameLayout>
